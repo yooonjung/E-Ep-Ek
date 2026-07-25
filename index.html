@@ -372,7 +372,7 @@ const cScale=document.getElementById('cScale'),cFloor=document.getElementById('c
 vfile.addEventListener('change',()=>{
   const f=vfile.files[0]; if(!f) return;
   vid.src=URL.createObjectURL(f); stageBox.style.display='block';
-  vid.addEventListener('loadedmetadata',()=>{ syncCanvas(); vid.currentTime=0; },{once:true});
+  vid.addEventListener('loadedmetadata',()=>{ syncCanvas(); vid.currentTime=0.001; },{once:true});
 });
 function syncCanvas(){ ov.width=vid.videoWidth; ov.height=vid.videoHeight; drawOverlay(); }
 vid.addEventListener('seeked',drawOverlay);
